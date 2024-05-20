@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer'
 
 const About = ({ darkMode, toggleDarkMode }) => {
   return (
@@ -41,6 +42,7 @@ const About = ({ darkMode, toggleDarkMode }) => {
             </ul>
           </div>
         </div>
+        <Footer darkMode={darkMode} />
       </div>
     </>
   )
