@@ -63,7 +63,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/etask-todo-app.git
+   https://github.com/Nil369/eTask-Your_Todos_on_Cloud.git
    ```
 
 2. Navigate to the project directory:
