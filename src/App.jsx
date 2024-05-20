@@ -4,13 +4,14 @@ import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { v4 as uuidv4 } from 'uuid';
 import Footer from './components/Footer';
-import About from './components/About'; // Import About component
+import { ThemeProvider, useTheme } from './ThemeContext';
 
 function App() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const [showFinished, setShowFinished] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
+  const { darkMode } = useTheme()
 
   useEffect(() => {
     let todoString = localStorage.getItem("todos");
@@ -105,3 +106,11 @@ function App() {
 }
 
 export default App;
+
+// const AppWrapper = () => (
+//   <ThemeProvider>
+//     <App />
+//   </ThemeProvider>
+// );
+
+// export default AppWrapper;

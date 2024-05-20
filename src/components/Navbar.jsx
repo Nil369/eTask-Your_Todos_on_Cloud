@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../ThemeContext';
 
-const Navbar = ({ darkMode, toggleDarkMode }) => {
+const Navbar = ({  }) => {
+  const { darkMode, toggleDarkMode } = useTheme();
   return (
     <nav className={`flex justify-between items-center py-3 ${darkMode ? ' sticky bg-gray-900 text-white' : 'sticky bg-indigo-900 text-white'}`}>
       <div className="flex items-center space-x-2">

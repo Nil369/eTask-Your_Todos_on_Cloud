@@ -1,20 +1,24 @@
 import React from 'react';
 import Navbar from './Navbar';
-import Footer from './Footer'
+import { useTheme } from '../ThemeContext'; // Import useTheme hook
+import Footer from './Footer';
 
-const About = ({ darkMode, toggleDarkMode }) => {
+const About = () => {
+  const { darkMode, toggleDarkMode } = useTheme();
   return (
     <>
      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <div className={`min-h-screen py-10 px-5 md:container md:mx-auto ${darkMode ? 'bg-gray-900 text-white' : 'bg-violet-200 text-black'}`}>
+      <div className={`min-h-screen py-10 px-5 ${darkMode ? 'bg-gray-500 text-white' : 'bg-violet-200 text-black'}`}>
         <div className="flex flex-col items-center text-center mb-10">
           <img
             src="/Formal Pic.jpg" // Replace with your actual image URL
             alt="Akash Halder"
-            className="w-80 h-90 rounded-full shadow-2xl mb-5"
+            className="w-80 h-80 rounded-full shadow-2xl mb-5"
           />
-          <h1 className="text-4xl font-bold">Akash Halder</h1>
-          <p className="mt-4 text-lg font-semibold ">Full Stack Web Developer || MERN Stack Developer || Video Editor || C(Programming language) || C++ || Python || ML enthusiast 🤖</p>
+          <h1 className={`text-4xl font-bold ${darkMode? 'text-4xl font-bold text-yellow-400': ""}`}>Akash Halder</h1>
+          <p className="mt-4 text-lg font-semibold">
+            Full Stack Web Developer || MERN Stack Developer || Video Editor || C(Programming language) || C++ || Python || ML enthusiast 🤖
+          </p>
           <p className="mt-4 max-w-2xl">
             Hi 👋🏼 I'm Akash Halder, a dynamic professional with expertise in video editing, graphic design, and full-stack web development.
             <br /><br />
@@ -42,10 +46,10 @@ const About = ({ darkMode, toggleDarkMode }) => {
             </ul>
           </div>
         </div>
-        <Footer darkMode={darkMode} />
       </div>
+      <Footer darkMode={darkMode}/>
     </>
-  )
+  );
 }
 
 export default About;
